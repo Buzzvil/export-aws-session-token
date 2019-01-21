@@ -18,7 +18,7 @@ AWS  is supporting cli MFA by session token. The command is `aws sts get-session
 
 ## Installation
 
-Check the [releases](./releases) for the latest version.
+Check the [releases](https://github.com/Buzzvil/export-aws-session-token/releases) for the latest version.
 
 ## Command 
 
