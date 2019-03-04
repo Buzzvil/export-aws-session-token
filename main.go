@@ -17,6 +17,7 @@ type ExportOption struct {
 	DurationSeconds *int64
 	SerialNumber    *string
 	TokenCode       *string
+	Profile         *string
 }
 
 // Global variables
@@ -70,6 +71,10 @@ value. If MFA authentication is required, and the user does not pro-
 vide a code when requesting a set of temporary security credentials,
 the  user  will  receive an "access denied" response when requesting
 resources that require MFA authentication.`),
+		Profile: exportCommand.String(
+			"profile", "default",
+			`Profile name which is defined in credentials file. You can get list 
+of profile with "export-aws-session-token list" command`),
 	}
 }
 

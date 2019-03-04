@@ -1,3 +1,8 @@
+/*
+AWS GO SDK
+- session
+- sts
+*/
 package main
 
 import (
@@ -20,7 +25,10 @@ type Output struct {
 func ExportSessionToken(option ExportOption) {
 	// Load session
 	log.Info("Load session")
-	svc := sts.New(session.New())
+	sess := session.Must(session.NewSessionWithOptions(session.Options{
+		Profile: *option.Profile,
+	}))
+	svc := sts.New(sess)
 
 	// Get session token
 	output, err := svc.GetSessionToken(&sts.GetSessionTokenInput{
